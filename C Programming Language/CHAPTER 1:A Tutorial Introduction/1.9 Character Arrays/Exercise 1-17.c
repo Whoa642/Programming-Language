@@ -11,9 +11,7 @@ int main()
 
     char line[MAX];
     while((len = getline(line,MAX)) > 0)
-    {
         if(len > LIMIT) printf("%s",line);
-    }
 }
 
 int getline(char s[],int lim)
