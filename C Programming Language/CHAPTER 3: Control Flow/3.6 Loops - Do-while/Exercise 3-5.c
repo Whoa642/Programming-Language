@@ -1,4 +1,4 @@
-#define abs(x) ((x) > 0) ? (x) : (-x)
+#define abs(x) ((x) > 0 ? (x) : (-x))
 
 void reverse(char s[])
 {
