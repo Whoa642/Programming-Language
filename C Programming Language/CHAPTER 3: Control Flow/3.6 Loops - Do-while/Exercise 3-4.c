@@ -14,7 +14,6 @@ void reverse(char s[])
 void itoa(int n,char s[])
 {
     int i,sign;
-
     sign = n; i = 0; 
 
     do
