@@ -11,7 +11,6 @@ void push(double);
 double pop(void);
 int getch(void);
 void ungetch(int);
-void swap(double*,double*);
 
 int sp = 0; 
 double val[MAXVAL]; 
