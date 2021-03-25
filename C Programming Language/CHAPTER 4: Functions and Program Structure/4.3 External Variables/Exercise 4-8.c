@@ -1,8 +1,8 @@
-char buf;
+int buf;
 
 int getch(void) 
 {
-    char c;
+    int c;
     if(buf) c = buf; 
     else c = getchar();
     buf = 0;
