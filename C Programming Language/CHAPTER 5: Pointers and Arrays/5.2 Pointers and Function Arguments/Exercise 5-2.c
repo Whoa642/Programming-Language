@@ -1,9 +1,9 @@
 #include <ctype.h>
 #include <stdio.h>
-int getfloat(double *pn) 
+int getfloat(float *pn) 
 {
     int c,sign;
-    double power;
+    float power;
     while(isspace(c = getch()));
 
     if(!isdigit(c) && c != EOF && c != '+' && c != '-' && c != '.')
