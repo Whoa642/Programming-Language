@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
     int type;
     double op2;
 
-    if(argc != 1)
+    if(argc == 1)
         printf("Usage: expr\n");
 
     while(--argc > 0)
