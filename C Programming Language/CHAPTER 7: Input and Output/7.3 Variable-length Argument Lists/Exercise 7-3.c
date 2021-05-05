@@ -45,6 +45,6 @@ void minprintf(char *fmt, ...)
                 putchar(*p);
                 break;
         }
-        va_end(ap); 
     }
+    va_end(ap); 
 }
