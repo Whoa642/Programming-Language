@@ -1,22 +1,27 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-    int c,bl;
-    bl = 0;
-
+    int c;
+    int isBlank = 0;
     while((c = getchar()) != EOF)
     {
-        if(c == ' ') bl++;
-        else 
+        if(c != ' ')
         {
-            if(bl >= 1)
+            if(isBlank)
             {
                 putchar(' ');
-                bl = 0;
+                isBlank = 0;
             }
             putchar(c);
         }
+        if(c == ' ')
+        {
+            isBlank = 1;
+        }
     }
+
     return 0;
 }
+
+
