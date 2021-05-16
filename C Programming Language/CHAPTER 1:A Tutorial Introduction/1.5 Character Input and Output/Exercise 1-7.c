@@ -2,6 +2,6 @@
 
 int main()
 {
-    printf("Value of EOF:%d",EOF);
+    printf("EOF:%d",EOF);
     return 0;
 }
