@@ -16,9 +16,7 @@ int main(void)
             putchar(c);
         }
         if(c == ' ')
-        {
             isBlank = 1;
-        }
     }
 
     return 0;
