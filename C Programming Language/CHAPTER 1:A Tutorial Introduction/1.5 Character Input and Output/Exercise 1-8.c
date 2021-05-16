@@ -7,9 +7,12 @@ int main()
     nt = nb = nl = 0;
     while((c = getchar()) != EOF)
     {
-        if(c == '\n') nl++;
-        else if(c == ' ') nb++;
-        else if(c == '\t') nt++;
+        if(c == '\n') 
+            nl++;
+        if(c == ' ') 
+            nb++;
+        if(c == '\t') 
+            nt++;
     }
 
     printf("newline: %d blank: %d tab: %d\n",nl,nb,nt);
