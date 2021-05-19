@@ -1,31 +1,27 @@
 #include <stdio.h>
 #define IN 1
 #define OUT 0
+#define CHAR 'A'
 
 int main()
 {
-    int c,nc,state;
-
-    nc = 0;
-    state = OUT;
+    int c,last = CHAR;
+    int state = OUT;
     while((c = getchar()) != EOF)
     {
-        if(c == '\n' || c == ' ' || c == '\t') 
+        if(state == IN)
+            if(last != '\t' && last != ' ' && last != '\n')
+                putchar(last);
+        if(c == '\t' || c == ' ' || c == '\n')
         {
-            if(nc) putchar('\n');
-            nc = 0;
             state = OUT;
+            if(last != '\t' && last != ' ' && last != '\n')
+                putchar('\n');
         }
         else if(state == OUT)
-        {
-            putchar(c);
-            nc++;
             state = IN;
-        }
-        else if(state == IN)
-        {
-            nc++;
-            putchar(c);
-        }
+
+        last = c;
     }
+    return 0;
 }
