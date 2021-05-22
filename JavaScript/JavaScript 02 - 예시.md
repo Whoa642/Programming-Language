@@ -72,14 +72,14 @@ switch(site){
    case "GOOGLE":
    case "google":
        alert("구글 페이지로 이동합니다.");
-       dest="www.google.com";
+       dest = "www.google.com";
        break;
    default:
        alert("처리 불가능한 페이지 입니다.");
    }
    
    if(dest)
-       location.href="http://"+dest;   
+       location.href = "http://"+dest;   
 ```
 
 ## 숫자 맞추기 게임
@@ -90,7 +90,7 @@ switch(site){
 4. 입력값이 정답과 같으면 게임을 종료한다.
 5. 사용자가 시도한 횟수를 출력한다.
 ```javascript
-var num = Math.floor(Math.random()*100)+1;
+var num = Math.floor(Math.random() * 100) + 1;
 var input = 0;
 var cnt = 0;
  
