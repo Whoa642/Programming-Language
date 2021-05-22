@@ -58,13 +58,13 @@ var tag = ""; // 공백 문자
      
 tag += "<table border='1'>";
 tag += "<tr>";
-tag += "<td>이름</td><td>"+name+"</td>"
+tag += "<td>이름</td><td>" + name + "</td>"
 tag += "</tr>";
 tag += "<tr>";
-tag += "<td>나이</td><td>"+age+"</td>"
+tag += "<td>나이</td><td>" + age + "</td>"
 tag += "</tr>";
 tag += "<tr>";
-tag += "<td>사는곳</td><td>"+addr+"</td>"
+tag += "<td>사는곳</td><td>" + addr + "</td>"
 tag += "</tr>";
 tag += "</table>";  
      
