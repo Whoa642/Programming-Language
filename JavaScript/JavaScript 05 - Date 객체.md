@@ -10,7 +10,7 @@ var d1 = new Date(2021, 4, 6); // 2021년 5월 6일
 // 문자열 날짜
 var d2 = new Date("2021/4/6");
  
-//(년, 월, 일, 시, 분, 초)
+// (년, 월, 일, 시, 분, 초)
 var d3 = new Date(2021, 4, 6, 9, 30, 0);
 ```
 년, 월, 일, 시, 분, 초를 가져올 때는 getFullYear(), getMonth(), getDay(), getHours(), getMinutes(), getSeconds() 함수를 사용할 수 있다.
