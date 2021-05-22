@@ -58,7 +58,7 @@ document.write(msg.substring(6)); // 첨자 6부터 끝까지
 // substring과 비슷한 함수인 slice(시작 첨자, 끝 첨자)는 시작 첨자부터 끝 첨자 앞까지, substr(시작 첨자, 개수)은 시작 첨자부터 개수만큼 부분 문자열을 반환한다.
  
 // indexOf("문자")은 "문자"와 일치하는 문자열의 문자의 가장 왼쪽 위치를 반환하고 없으면 -1을 반환한다.
-document.write(msg.indexOf("g") >=0 ? "글자 O":"글자 X");
+document.write(msg.indexOf("g") >=0 ? "글자 O" : "글자 X");
    
 // lastIndexOf("문자")은 "문자"와 일치하는 문자열의 문자의 가장 오른쪽 위치를 반환하고 없으면 indexOf처럼 -1을 반환한다.
  
