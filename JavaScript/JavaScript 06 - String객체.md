@@ -20,25 +20,25 @@ String 객체는 문자열의 스타일을 변경하는 함수와 문자열을 �
 ## 문자열의 스타일을 변경하는 함수
 ```javascript
 // 문자열을 굵게 만든다.
-document.write(msg.bold()+"<hr>");
+document.write(msg.bold() + "<hr>");
  
 // 문자열을 이텔릭체로 설정한다.
-document.write(msg.italics()+"<hr>");
+document.write(msg.italics() + "<hr>");
  
 // 문자열의 색깔을 푸른색으로 설정한다.
-document.write(msg.fontcolor("blue")+"<hr>");
+document.write(msg.fontcolor("blue") + "<hr>");
  
 // 문자열의 문자 크기를 20으로 설정한다.
-document.write(msg.fontsize(20)+"<hr>");
+document.write(msg.fontsize(20) + "<hr>");
  
 // 문자열을 모두 대문자로 변경한다.
-document.write(msg.toUpperCase()+"<hr>");
+document.write(msg.toUpperCase() + "<hr>");
  
 // 문자열을 모두 소문자로 변경한다.
-document.write(msg.toLowerCase()+"<hr>");
+document.write(msg.toLowerCase() + "<hr>");
  
 // 문자열을 대문자,글자크기 15,빨강,굵게 표현하기
-document.write(msg.toUpperCase().fontsize(15).fontcolor("red").bold()+"<hr>");
+document.write(msg.toUpperCase().fontsize(15).fontcolor("red").bold() + "<hr>");
 // [. 연산자]를 사용해서 한 번에 여러 개의 함수를 실행할 수 있다. => 체이닝 기법
 ```
 
@@ -58,13 +58,13 @@ document.write(msg.substring(6)); // 첨자 6부터 끝까지
 // substring과 비슷한 함수인 slice(시작 첨자, 끝 첨자)는 시작 첨자부터 끝 첨자 앞까지, substr(시작 첨자, 개수)은 시작 첨자부터 개수만큼 부분 문자열을 반환한다.
  
 // indexOf("문자")은 "문자"와 일치하는 문자열의 문자의 가장 왼쪽 위치를 반환하고 없으면 -1을 반환한다.
-document.write(msg.indexOf("g")>=0? "글자 O":"글자 X");
+document.write(msg.indexOf("g") >=0 ? "글자 O":"글자 X");
    
 // lastIndexOf("문자")은 "문자"와 일치하는 문자열의 문자의 가장 오른쪽 위치를 반환하고 없으면 indexOf처럼 -1을 반환한다.
  
 // split("문자-구분자")은 "문자-구분자"를 기준으로 문자열을 파싱한다.
 msg = "It's a pleasure to meet you!";
-document.write(msg.split(" ",3)); // It's,a,pleasure
+document.write(msg.split(" ", 3)); // It's,a,pleasure
 document.write("<hr>");
 document.write(msg.split(" ")); // It's,a,pleasure,to,meet,you!
 document.write("<hr>");
