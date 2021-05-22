@@ -2,7 +2,7 @@
 
 float fahr_to_cel(float);
 
-int main()
+int main(void)
 {
     float fahr, celsius;
     int lower,upper,step;
@@ -12,7 +12,6 @@ int main()
     step = 20;
 
     fahr = lower;
-    printf("The program prints the table of temperatures in Fahrenheit and Celsius.\n");
     while(fahr <= upper)
     {
         celsius = (5.0/9.0)*(fahr-32.0);
