@@ -21,8 +21,11 @@ int getline(char s[],int lim)
 {
     int c,i;
 
-    for(i = 0; i < lim-2 && (c = getchar()) != EOF && c != '\n'; ++i) s[i] = c;
-    if(c == '\n') s[i++] = c;
+    for(i = 0; i < lim-2 && (c = getchar()) != EOF && c != '\n'; i++) 
+        s[i] = c;
+
+    if(c == '\n') 
+        s[i++] = c;
     s[i] = '\0';
     
     return i;
@@ -30,17 +33,20 @@ int getline(char s[],int lim)
 
 void reverse(char s[])
 {
+    char tmp;
     int i,j;
 
     i = 0;
-    while(s[i] != '\0') ++i;
-    --i;
-    if(s[i] == '\n') --i;
+    while(s[i] != '\0')
+        i++;
+    
+    if(s[--i] == '\n') 
+        i--;
 
-    for(j = 0; j < i; ++j,--i)
+    for(j = 0; j < i; i--,j++)
     {
-        char t = s[i];
+        tmp = s[i];
         s[i] = s[j];
-        s[j] = t;
+        s[j] = tmp;
     }
 }
