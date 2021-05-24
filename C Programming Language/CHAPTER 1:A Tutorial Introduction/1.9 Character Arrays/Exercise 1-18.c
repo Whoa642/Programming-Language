@@ -30,10 +30,14 @@ int getline(char s[],int lim)
 
 int delete(char s[])
 {
-    int i = 0;
-    while(s[i] != '\n') 
+    int i;
+    i = 0;
+
+    while(s[i] != '\0')
         i++;
-    i--;
+    if(s[--i] == '\n')
+        i--; 
+
     while(i >= 0 && (s[i] == '\t' || s[i] == ' ')) 
         i--;
         
