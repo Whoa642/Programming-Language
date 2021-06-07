@@ -113,7 +113,7 @@
         
         if(rs.next()){
             if(pass.equals(rs.getString("pass"))){
-                session.setAttribute("id", id);
+                session.setAttribute("id", ID);
                 response.sendRedirect("main.jsp");
             }else{
                 %>
