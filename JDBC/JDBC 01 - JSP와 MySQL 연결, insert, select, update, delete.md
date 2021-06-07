@@ -228,7 +228,7 @@
      final String DBPW = "1234";
      
      Class.forName(DRIVER);
-     System.out.println("드라이버 로딩 성공!");
+     System.out.println("드라이버 로딩 성공");
  
      Connection con = DriverManager.getConnection(DBURL, DBID, DBPW);
      System.out.println("DB 연결 성공");
