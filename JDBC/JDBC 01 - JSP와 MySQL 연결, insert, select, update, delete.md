@@ -13,8 +13,7 @@
         Class.forName("com.mysql.jdbc.Driver");
         
         System.out.println("드라이버 로딩 성공");
-        Connection conn 
-         = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb", "root", "1234");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jspdb", "root", "1234");
         
         System.out.println("DB 연결 성공");
         System.out.println("연결 정보:"+conn);    
