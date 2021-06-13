@@ -130,11 +130,11 @@
                 <br>
             좋아하는 과목:<select name="subject">
                         <option value="">선택하세요.</option>
-                        <option value="">자바</option>
-                        <option value="">자바스크립트</option>
-                        <option value="">웹프로그래밍WEB</option>
-                        <option value="">웹프로그래밍JSP</option>
-                        <option value="">데이터베이스</option>
+                        <option value="java">자바</option>
+                        <option value="javascript">자바스크립트</option>
+                        <option value="web">웹프로그래밍WEB</option>
+                        <option value="jsp">웹프로그래밍JSP</option>
+                        <option value="db">데이터베이스</option>
                       </select><br>
             메시지:<textarea rows="5" cols="100" name="msg"></textarea>
             <hr>
