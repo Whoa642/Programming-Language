@@ -79,7 +79,7 @@
     스포츠: ${paramValues.sports[1] }<br>    
  
     <!--취미정보는 반복문을 사용해서 출력-->
-    <!--EL 표현식은 for반복문 사용 X-->
+    <!--EL 표현식은 for 반복문 사용 X-->
   <%--<%
      for(int i = 0; i < hob.length; i++){
          %>
