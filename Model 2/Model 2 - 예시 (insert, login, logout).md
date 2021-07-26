@@ -158,10 +158,10 @@ public class MemberLoginAction implements Action{
             PrintWriter out = response.getWriter();
             out.print("<html>");
             out.print("<head>");
-            out.print(" <script> ");
-            out.print(" alert('비밀번호 오류'); ");
-            out.print(" history.back(); ");
-            out.print(" </script> ");
+            out.print("<script>");
+            out.print("alert('비밀번호 오류');");
+            out.print("history.back();");
+            out.print("</script>");
             out.print("</head>");
             out.print("<body>");
             out.print("</body>");
@@ -176,10 +176,10 @@ public class MemberLoginAction implements Action{
             PrintWriter out = response.getWriter();
             out.print("<html>");
             out.print("<head>");
-            out.print(" <script> ");
-            out.print(" alert('비회원'); ");
-            out.print(" history.back(); ");
-            out.print(" </script> ");
+            out.print("<script>");
+            out.print("alert('비회원');");
+            out.print("history.back();");
+            out.print("</script>");
             out.print("</html>");
             
             out.close();
