@@ -79,7 +79,7 @@ public class MemberFrontController extends HttpServlet {
         // URI 정보
         String requestURI = request.getRequestURI();
         System.out.println("C requestURI: "+requestURI);
-        // Context 정보(프로젝트 명)
+        // Context 정보(프로젝트 이름)
         String ctxPath = request.getContextPath();
         System.out.println("C ctxPath: "+ctxPath);
         // URI - CTX => command
@@ -96,13 +96,14 @@ public class MemberFrontController extends HttpServlet {
         
         // 회원가입
         if(command.equals("/MemberJoin.me")){
-            System.out.println("C: /MemberJoin.me 호출 ");
-            System.out.println("C: 정보 입력 페이지 (view 페이지로 이동)");
+            System.out.println("C: /MemberJoin.me 호출");
+            System.out.println("C: insertForm.jsp (view 페이지로 이동)");
             
             // 페이지 이동 객체 생성 후 정보만 저장
             forward = new ActionForward();
             forward.setPath("./member/insertForm.jsp");
             forward.setRedirect(false);
+ 
         // 회원가입 처리
         }else if(command.equals("/MemberJoinAction.me")){
             System.out.println("C: /MemberJoinAction.me 호출");
@@ -117,14 +118,16 @@ public class MemberFrontController extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+ 
         // 로그인
         }else if(command.equals("/MemberLogin.me")){
-            System.out.println("C: /MemberLogin.me 호출 ");
-            System.out.println("C: view 페이지로 이동");
+            System.out.println("C: /MemberLogin.me 호출");
+            System.out.println("C: loginForm.jsp (view 페이지로 이동)");
             
             forward = new ActionForward();
             forward.setPath("./member/loginForm.jsp");
             forward.setRedirect(false);
+ 
         // 로그인 처리
         }else if(command.equals("/MemberLoginAction.me")){
             System.out.println("C: /MemberLoginAction.me 호출");
@@ -139,7 +142,7 @@ public class MemberFrontController extends HttpServlet {
             }
         // 메인
         }else if(command.equals("/Main.me")){
-            System.out.println("C: /Main.me 호출 ");
+            System.out.println("C: /Main.me 호출");
             System.out.println("C: main.jsp (view 페이지로 이동)");
             
             forward = new  ActionForward();
@@ -147,8 +150,8 @@ public class MemberFrontController extends HttpServlet {
             forward.setRedirect(false);
         // 로그아웃
         }else if(command.equals("/MemberLogout.me")){
-            System.out.println("C: /MemberLogout.me 호출 ");
-            System.out.println("C: 처리 동작 (model)");
+            System.out.println("C: /MemberLogout.me 호출");
+            System.out.println("C: 로그아웃 처리 동작 (model)");
             
             // MemberLogoutAction() 객체 생성
             action = new MemberLogoutAction();
@@ -157,14 +160,52 @@ public class MemberFrontController extends HttpServlet {
             }catch(Exception e){
                 e.printStackTrace();
             }
+        // 회원정보 출력
+        }else if(command.equals("/MemberInfo.me")){
+            System.out.println("C: /MemberInfo.me 호출");
+            System.out.println("C: DB 정보를 가져와서 view 페이지 출력");            
+            
+            // MemberInfo() 객체 생성
+            action = new MemberInfoAction();
+            
+            try{
+                forward = action.execute(request, response);
+            }catch(Exception e){
+                e.printStackTrace();
+            }   
+        // 회원정보 수정         
+        }else if(command.equals("/MemberUpdate.me")){
+            System.out.println("C: /MemberUpdate.me 호출");
+            System.out.println("C: DB 정보를 가져와서 view 페이지 출력");
+            
+            // MemberUpdate() 객체 생성
+            action = new MemberUpdateAction();
+            
+            try{
+                forward = action.execute(request, response);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        // 회원정보 수정 처리
+        }else if(command.equals("/MemberUpdateProAction.me")){
+            System.out.println("C: /MemberUpdateProAction.me 호출");
+            System.out.println("C: 전달 정보를 저장 -> DB에서 수정");
+            
+            // MemberUpdateProAction() 객체 생성
+            action = new MemberUpdateProAction();
+            
+            try{
+                forward = action.execute(request, response);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
-                
+ 
         System.out.println("C: 2. 가상주소 매핑 완료");
         // --------------------2. 가상주소 매핑-------------------------
  
  
         // --------------------3. 페이지 이동---------------------------
-        
         if(forward != null){
             //페이지 이동정보
  
