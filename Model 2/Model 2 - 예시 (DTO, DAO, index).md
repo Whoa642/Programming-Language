@@ -217,7 +217,7 @@ public class MemberDAO {
         
         return flag;
     }
-    // 로그인 완료    
+    // 로그인     
  
  
     // 회원정보 반환
