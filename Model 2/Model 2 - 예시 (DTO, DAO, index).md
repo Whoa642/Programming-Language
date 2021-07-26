@@ -162,7 +162,7 @@ public class MemberDAO {
             // 4. SQL 실행
             pstmt.executeUpdate();
             
-            System.out.println("mDAO: 회원가입 성공");
+            System.out.println("mDAO: 회원가입 완료");
         
         }catch(Exception e){
             e.printStackTrace();
@@ -173,7 +173,7 @@ public class MemberDAO {
     // 회원 추가
     
     
-    // 로그인 체크
+    // 로그인 확인
     public int loginCheck(String id,String pass){
         int flag = -1;
         
@@ -209,7 +209,7 @@ public class MemberDAO {
                 flag = -1;
             }
             
-            System.out.println("mDAO: 로그인 체크 성공 "+flag);
+            System.out.println("mDAO: 로그인 확인 완료 "+flag);
             
         }catch(Exception e){
             e.printStackTrace();
@@ -217,7 +217,106 @@ public class MemberDAO {
         
         return flag;
     }
-    // 로그인 체크    
+    // 로그인 완료    
+ 
+ 
+    // 회원정보 반환
+    public MemberDTO getMember(String id){
+        MemberDTO mDTO = null;
+        
+        try{
+            // 1,2. DB 연결
+            conn = getConn();
+            
+            // 3. SQL 작성 & pstmt 객체
+            sql = "select * from itwill_member where id=?";
+            pstmt = conn.prepareStatement(sql);
+            
+            // 3-1. ?
+            pstmt.setString(1, id);
+            
+            // 4. SQL 실행
+            rs = pstmt.executeQuery();
+            
+            // 5. 데이터 처리
+            if(rs.next()){
+                mDTO = new MemberDTO();
+                
+                mDTO.setAge(rs.getInt("age"));
+                mDTO.setEmail(rs.getString("email"));
+                mDTO.setGender(rs.getString("gender"));
+                mDTO.setId(rs.getString("id"));
+                mDTO.setName(rs.getString("name"));
+                mDTO.setPass(rs.getString("pass"));
+                mDTO.setReg_date(rs.getTimestamp("reg_date"));
+            }
+            
+            System.out.println("mDAO: id에 해당하는 회원정보 저장 완료");
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            closeDB();
+        }
+        
+        return mDTO;    
+    }
+    // 회원정보 반환
+    
+    
+    // 회원정보 수정
+    public int updateMember(MemberDTO mDTO){
+        int flag = -1;
+        
+        try{
+            // 1,2. DB 연결
+            conn = getConn();
+            
+            // 3. SQL 작성 & pstmt 객체
+            sql = "select pass from itwill_member where id=?";
+            pstmt = conn.prepareStatement(sql);
+            
+            // 3-1. ?
+            pstmt.setString(1, mDTO.getId());
+            
+            // 4. SQL 실행
+            rs = pstmt.executeQuery();
+            
+            // 5. 데이터 처리
+            if(rs.next()){
+                // 아이디 있는 경우
+                if(mDTO.getPass().equals(rs.getString("pass"))){
+                    // 본인 - 회원정보 수정
+                    sql = "update itwill_member set name=?,age=?,gender=?,email=? where id=?";
+                    pstmt = conn.prepareStatement(sql);
+                    pstmt.setString(1, mDTO.getName());
+                    pstmt.setInt(2, mDTO.getAge());
+                    pstmt.setString(3, mDTO.getGender());
+                    pstmt.setString(4, mDTO.getEmail());
+                    pstmt.setString(5, mDTO.getId());
+                    
+                    pstmt.executeUpdate();
+                    flag = 1;
+                }else{
+                    // 비밀번호 불일치
+                    flag = 0;
+                }
+            }else{
+                // 비회원
+                flag = -1;
+            }
+            
+            System.out.println("mDAO: 회원정보 수정 완료 "+flag);
+            
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            closeDB();
+        }
+        
+        return flag;
+    }
+    // 회원정보 수정
 }
 ```
 
