@@ -148,7 +148,7 @@ public class MemberLoginAction implements Action{
         MemberDAO mDAO = new MemberDAO();
         int flag = mDAO.loginCheck(id, pass);
         
-        System.out.println("M: 로그인 체크 완료 "+flag);
+        System.out.println("M: 로그인 확인 완료 "+flag);
         
         // 로그인 처리 결과에 따라서 페이지 이동 (JS)
         
@@ -218,14 +218,19 @@ public class MemberLogoutAction implements Action{
         
         System.out.println("M: MemberLogoutAction_execute() 호출");
         
+        // 세션 초기화
         HttpSession session = request.getSession();
         session.invalidate();
         
-        ActionForward forward = new ActionForward();
-        forward.setPath("./MemberLogin.me");
-        forward.setRedirect(true);
+        // 페이지 이동 (JS)
+        response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println("<script>");
+        out.println("alert('로그아웃')");
+        out.println("location.href='./Main.me';");
+        out.println("</script>");
         
-        return forward;
+        return null;
     }
 }
 ```
