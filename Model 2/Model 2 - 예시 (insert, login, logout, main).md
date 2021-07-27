@@ -234,3 +234,48 @@ public class MemberLogoutAction implements Action{
     }
 }
 ```
+
+<h3>로그인한 회원의 JSP 메인 페이지 (main.jsp)</h3>
+
+```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <h1>WebContent/member/main.jsp</h1>
+   <h2>메인 페이지 (Model2)</h2>
+ 
+   <%
+     // 세션 영역에 있는 정보를 저장
+     String id = (String) session.getAttribute("id");
+     // 정보가 없으면 로그인 페이지로 이동   
+     if(id == null){
+         response.sendRedirect("./MemberLogin.me");
+     }
+   %>
+ 
+   <%=id %>님 환영합니다
+   <input type="button" value="로그아웃" 
+          onclick="location.href='./MemberLogout.me';"><br>
+   <hr>
+ 
+   <a href="./MemberInfo.me">회원 정보 조회(select)</a><br>
+   <a href="./MemberUpdate.me">회원 정보 수정(update)</a><br>
+   <a href="./MemberDelete.me">회원 정보 삭제(delete)</a><br>
+ 
+   <!--admin(관리자) 메뉴-->
+   <%        
+    if(id != null && id.equals("admin")){         
+   %>
+       <a href="./MemberListAction.me"> 회원 정보 목록(list)</a><br>
+   <%
+    }
+   %>
+</body>
+</html>
+```
