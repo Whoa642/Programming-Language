@@ -52,7 +52,7 @@ public interface Action {
 }
 ```
 
-<h3>Servlet으로 Controller 구현</h3>
+<h3>Model과 View를 연결하는 MemberFrontController 객체</h3>
 
 ```java
 package com.itwillbs.member.action;
@@ -131,7 +131,7 @@ public class MemberFrontController extends HttpServlet {
         // 로그인 처리
         }else if(command.equals("/MemberLoginAction.me")){
             System.out.println("C: /MemberLoginAction.me 호출");
-            System.out.println("C: DB에 이동해서 로그인 체크 (model 이동)");
+            System.out.println("C: DB에 이동해서 로그인 확인 (model)");
             
             // MemberLoginAction() 객체 생성
             action = new MemberLoginAction();
@@ -193,6 +193,40 @@ public class MemberFrontController extends HttpServlet {
             
             // MemberUpdateProAction() 객체 생성
             action = new MemberUpdateProAction();
+            
+            try{
+                forward = action.execute(request, response);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        // 회원탈퇴
+        }else if(command.equals("/MemberDelete.me")){
+            System.out.println("C: /MemberDelete.me 호출");
+            System.out.println("C: 비밀번호를 입력받는 view 페이지로 이동");
+            
+            forward = new ActionForward();
+            forward.setPath("./member/deleteForm.jsp");
+            forward.setRedirect(false);
+        // 회원탈퇴 처리
+        }else if(command.equals("/MemberDeleteAction.me")){
+            System.out.println("C: /MemberDeleteAction.me 호출");
+            System.out.println("C: DB에서 회원정보 삭제");
+            
+            // MemberDeleteAction() 객체 생성
+            action = new MemberDeleteAction();
+            
+            try{
+                forward = action.execute(request, response);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        // 회원목록 
+        }else if(command.equals("/MemberListAction.me")){
+            System.out.println("C: /MemberListAction.me");
+            System.out.println("C: DB 정보를 가져와서 view 페이지에 출력");
+            
+            // MemberListAction() 객체 생성
+            action = new MemberListAction();
             
             try{
                 forward = action.execute(request, response);
