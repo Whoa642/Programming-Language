@@ -140,13 +140,36 @@ public class AdminGoodsFrontController extends HttpServlet {
             }catch(Exception e){
                 e.printStackTrace();;
             }
+        }else if(command.equals("/AdminGoodsModifyAction.ag")){
+            System.out.println("C: /AdminGoodsModifyAction.ag 호출");
+            System.out.println("C: 수정할 정보를 DB에 저장 후 이동");            
+            
+            // AdminGoodsModifyAction() 객체
+            action = new AdminGoodsModifyAction();
+            
+            try{
+                forward = action.execute(request, response);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }else if(command.equals("/AdminGoodsDelete.ag")){
+            System.out.println("C: /AdminGoodsDelete.ag 호출");
+            System.out.println("C: 상품의 정보를 바로 삭제 (DB)");                
+            
+            // AdminGoodsDeleteAction() 객체
+            action = new AdminGoodsDeleteAction();
+            
+            try{
+                forward = action.execute(request, response);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
         }
         
         System.out.println("C: 가상주소 매핑 끝");
         // --------------------2. 가상주소 매핑-------------------------
         
-        
-        
+                
         // --------------------3. 페이지 이동-------------------------
         System.out.println();
         System.out.println("C: 페이지 이동 시작");
@@ -183,7 +206,6 @@ public class AdminGoodsFrontController extends HttpServlet {
         doProcess(request,response);
     }
 }
-
 ```
 
 <h3>Context 정보</h3>
