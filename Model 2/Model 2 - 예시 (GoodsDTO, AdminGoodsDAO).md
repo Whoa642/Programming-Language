@@ -246,5 +246,112 @@ public class AdminGoodsDAO {
             
         }
         // 상품목록
+ 
+ 
+        // 상품정보
+        public GoodsDTO getAdminGoods(int num){
+            GoodsDTO gDTO = null;
+            
+            try{
+                // 1,2. DB 연결
+                conn = getConn();
+                
+                // 3. SQL 작성 & pstmt 객체
+                sql = "select * from itwill_goods where num=?";
+                pstmt = conn.prepareStatement(sql);
+                pstmt.setInt(1, num);
+                
+                // 4. SQL 실행
+                rs = pstmt.executeQuery();
+                
+                // 5. 데이터 처리
+                if(rs.next()){
+                    gDTO = new GoodsDTO();
+                    
+                    gDTO.setAmount(rs.getInt("amount"));
+                    gDTO.setBest(rs.getInt("best"));
+                    gDTO.setCategory(rs.getString("category"));
+                    gDTO.setColor(rs.getString("color"));
+                    gDTO.setContent(rs.getString("content"));
+                    gDTO.setDate(rs.getString("date"));
+                    gDTO.setImage(rs.getString("image"));
+                    gDTO.setName(rs.getString("name"));
+                    gDTO.setNum(rs.getInt("num"));
+                    gDTO.setPrice(rs.getInt("price"));
+                    gDTO.setSize(rs.getString("size"));
+                }
+                System.out.println("agDAO: 상품정보 저장 완료 ("+num+"번)");
+            }catch (Exception e){
+                e.printStackTrace();
+            }finally{
+                closeDB();
+            }
+            
+            return gDTO;
+        }
+        // 상품정보
+        
+        
+        // 상품정보 수정
+        public void modifyGoods(GoodsDTO gDTO){
+            
+            try{
+                // 1,2. DB 연결
+                conn = getConn();
+                
+                // 3. SQL 작성 & pstmt 객체
+                sql = "update itwill_goods set category=?,name=?,color=?,"
+                        + "amount=?,size=?,best=?,content=?,price=? where num=?";
+                pstmt = conn.prepareStatement(sql);
+                
+                pstmt.setString(1, gDTO.getCategory());
+                pstmt.setString(2, gDTO.getName());
+                pstmt.setString(3, gDTO.getColor());
+                pstmt.setInt(4, gDTO.getAmount());
+                pstmt.setString(5, gDTO.getSize());
+                pstmt.setInt(6, gDTO.getBest());
+                pstmt.setString(7, gDTO.getContent());
+                pstmt.setInt(8, gDTO.getPrice());
+                pstmt.setInt(9, gDTO.getNum());
+                
+                // 4. SQL 실행
+                pstmt.executeUpdate();
+                
+                System.out.println("agDAO: 관리자 - 상품수정 완료");
+                
+            }catch (Exception e){
+                e.printStackTrace();
+            }finally{
+                closeDB();
+            }
+        }
+        // 상품정보 수정
+        
+        
+        // 상품삭제
+        public void deleteGoods(int num){
+            
+            try{
+                // 1,2. DB 연결
+                conn = getConn();
+                
+                // 3. SQL 작성 & pstmt 객체
+                sql = "delete from itwill_goods where num=?";
+                pstmt = conn.prepareStatement(sql);
+                
+                pstmt.setInt(1, num);
+        
+                // 4. SQL 실행
+                pstmt.executeUpdate();
+                
+                System.out.println("agDAO: 관리자 - 상품삭제 완료");
+                
+            }catch (Exception e){
+                e.printStackTrace();
+            }finally{
+                closeDB();
+            }
+        }            
+        // 상품삭제
 }
 ```
