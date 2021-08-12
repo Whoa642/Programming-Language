@@ -63,7 +63,7 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
 
 명시된 길이로 숫자를 반올림해서 문자열로 반환
 
-<ul><li>매개변수 생략 시 숫자 그대로 반환</li></ul>
+<ul><li><b>매개변수 생략 시 숫자 그대로 반환</b></li></ul>
 
 <h3>valueOf()</h3>
 
@@ -73,7 +73,7 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
 
 <br>
 
-<h2>변수를 숫자로 변환하는 전역 변수</h2>
+<h2>변수를 숫자로 변환하는 전역 메서드</h2>
 
 <h3>Number()</h3>
 
@@ -89,7 +89,7 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
 문자열을 파싱한 다음 정수로 반환
   
 <ul>
-  <li>숫자가 여러 개면 오직 1번째 값만 반환 </li>
+  <li>숫자가 여러 개면 <b>오직 1번째 값</b>만 반환 </li>
   <li>숫자로 변환이 안될 경우 NaN 반환</li>
 </ul>
 
@@ -98,7 +98,7 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
 문자열을 파싱한 다음 숫자로 반환
   
 <ul>
-  <li>숫자가 여러 개면 오직 1번째 값만 반환 </li>
+  <li>숫자가 여러 개면 <b>오직 1번째 값</b>만 반환 </li>
   <li>숫자로 변환이 안될 경우 NaN 반환</li>
 </ul>
 
@@ -117,3 +117,76 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
     <li>POSITIVE_INFINITY: 오버플로우 시 반환</li>
     <li>NEGATIVE_INFINITY: 언더플로우 시 반환/li>
 </ul>
+
+
+```javascript
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <script type="text/javascript">
+		// 숫자는 항상 64 비트 부동 소수점
+		var num = 9.123456;
+		num = 100;
+		
+		// 지수 표기법
+		num = 1.93823e-8;
+		// 문자열 숫자 연산
+		var n1 = "10", n2 = "20", n3 = "30", n4 = "40";
+		
+		// '-'
+		var a1 = n1-n2; // -10
+		// '*'
+		var a2 = n2*n3; // 600
+		// '/'
+		var a3 = n4/n2; // 2
+		// '+' -> 덧셈 연산이 아니라 문자열 결합
+		// 16 진법
+		num = 0xffff; // 65535
+		// toString()으로 진법 변환 (2 ~ 36)
+		document.write(num.toString(5)); // 4044120
+		document.write(num.toString(36)); // 1EUF
+		document.write(num.toString(2)); // 1111111111111111
+		document.write(num.toString(8)); // 177777
+		document.write(num.toString(23)); // 58U8
+		
+		// toExponential()
+		num = 3.1415926;
+		num.toExponential(3); // 3.142e+0
+		num.toExponential(5); // 3.14159e+0
+		num.toExponential(2); // 3.14e+0
+		// toFixed()
+		num.toExponential(3); // 3.142
+		num.toExponential(5); // 3.14159
+		num.toExponential(2); // 3.14
+		// toPrecision()
+		num.toPrecision(6); // 3.14159
+		num.toPrecision(4); // 3.141
+		num.toPrecision(1); // 3
+		// Number()
+		Number(true); // 1
+		Number(false); // 0
+		Number("    123 "); // 123
+		Number("123    "); // 123
+		Number("    123"); // 123
+		Number("  123, 456"); // NaN
+		Number("  123 456"); // NaN
+		
+		// parseInt()
+		parseInt("-123 456"); // -123
+		parseInt("3923 World"); // 3923
+		parseInt("World 3923"); // NaN
+		parseInt("102.323"); // 102	
+		
+		// parseFloat()
+		parseFloat("-123.456"); // -123.456
+		parseFloat("-123"); // -123
+		parseFloat("3.14159 2.214 1.213"); // 3.14159
+		parseFloat("STFU 0.03202"); // NaN
+    </script>
+</head>
+<body> 
+</body>
+</html>
+```
