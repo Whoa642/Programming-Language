@@ -1,4 +1,4 @@
-<h2>정의</h2>
+<h1>정의</h1>
 
 다른 프로그래밍 언어와 달리 자바스크립트는 오직 1개의 숫자 자료형을 가지며 <b>숫자는 항상 64 비트 부동 소수점 숫자로 정의된다.</b>
 
@@ -15,7 +15,7 @@
 <br>
 
 
-<h2>NaN - Not a Number</h2>
+<h1>NaN - Not a Number</h1>
 
 숫자가 유효하지 않다는 것을 알려주는 예약어
 
@@ -26,7 +26,9 @@
   <li>NaN의 자료형은 숫자(Number)</li>
 </ol>
 
-<h2>Infinity</h2>
+<br>
+
+<h1>Infinity</h1>
 
 Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자의 범위를 넘어가면 반환되는 값
 
@@ -35,37 +37,39 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
   <li>Infinity의 자료형은 숫자(Number)</li>
 </ol>
 
-<h2>Hexadecimal</h2>
+<br>
+
+<h1>Hexadecimal</h1>
 
 숫자 앞에 0x를 붙이면 16진수로 해석, 자바스크립트는 기본적으로 숫자를 10진법으로 표시하지만 <b>toString()</b> 메서드에 2부터 36까지의 숫자를 입력해서 진법을 변경시킬 수 있다.
 
 <br>
 
-<h2>메서드</h2>
+<h1>메서드</h1>
 
 <b><i>모든 숫자 메서드는 모든 숫자 자료형에 적용할 수 있다. (리터럴, 변수, 식)</i></b>
 
-<h3>toString()</h3> 
+<h2>toString()</h2> 
 
 숫자를 문자열로 반환
 
-<h3>toExponential()</h3>
+<h2>toExponential()</h2>
 
 숫자를 반올림하고 지수 표기법으로 변환해서 문자열로 반환
 
 <ul><li>매개변수를 생략하면 반올림 적용 X</li></ul>
 
-<h3>toFixed()</h3>
+<h2>toFixed()</h2>
 
 명시된 개수의 숫자를 소수점 뒤에 표시하고 반올림해서 문자열로 반환
 
-<h3>toPrecision()</h3>
+<h2>toPrecision()</h2>
 
 명시된 길이로 숫자를 반올림해서 문자열로 반환
 
 <ul><li><b>매개변수 생략 시 숫자 그대로 반환</b></li></ul>
 
-<h3>valueOf()</h3>
+<h2>valueOf()</h2>
 
 숫자를 숫자로 반환
 
@@ -73,9 +77,9 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
 
 <br>
 
-<h2>변수를 숫자로 변환하는 전역 메서드</h2>
+<h1>변수를 숫자로 변환하는 전역 메서드</h1>
 
-<h3>Number()</h3>
+<h2>Number()</h2>
 
 변수를 숫자로 변환
   
@@ -84,7 +88,7 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
   <li>날짜를 숫자로 변환할 경우 1970년 1월 1일 이후 지난 시간을 밀리초로 변환</li>
 </ul>
   
-<h3>parseInt()</h3>
+<h2>parseInt()</h2>
 
 문자열을 파싱한 다음 정수로 반환
   
@@ -93,7 +97,7 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
   <li>숫자로 변환이 안될 경우 NaN 반환</li>
 </ul>
 
-<h3>parseFloat()</h3>
+<h2>parseFloat()</h2>
   
 문자열을 파싱한 다음 숫자로 반환
   
@@ -102,16 +106,19 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
   <li>숫자로 변환이 안될 경우 NaN 반환</li>
 </ul>
 
-<h2>숫자 속성</h2>
+<br>
 
-<h3>MIN_VALUE, MAX_VALUE</h3>
+
+<h1>숫자 속성</h1>
+
+<h2>MIN_VALUE, MAX_VALUE</h2>
 
 <ul>
   <li>MIN_VALUE: 가장 작은 값</li>
   <li>MAX_VALUE: 가장 큰 값</li>
 </ul>
 
-<h3>POSITIVE_INFINITY, NAGATIVE_INFINITY</h3>
+<h2>POSITIVE_INFINITY, NAGATIVE_INFINITY</h2>
 
 <ul>
     <li>POSITIVE_INFINITY: 오버플로우 시 반환</li>
