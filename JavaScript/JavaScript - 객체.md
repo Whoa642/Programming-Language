@@ -37,6 +37,8 @@
 
 변수를 new 키워드로 선언하면 객체를 생성할 수있다. <b><i>var 참조 변수명 = new Object();</i></b> (<b>String, Number, Boolean는 객체로 선언하면 코드의 복잡성이 높아지고 실행 속도가 느려진다</b>.)
 
+<br>
+
 ```javascript
 <!DOCTYPE html>
 <html>
@@ -67,6 +69,8 @@
 </body>
 </html>
 ```
+
+<br>
 
 <h1>자바스크립트의 객체의 종류</h1>
 
