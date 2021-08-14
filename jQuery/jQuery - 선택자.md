@@ -1,8 +1,49 @@
+<h1>정의</h1>
+
+<ol>
+ <li>HTML 요소를 선택하고 조작 가능</li>
+ <li>HTML 요소의 이름, id, 클래스, 자료형, 속성, 속성값을 찾는데 선택자 사용(이미 존재하는 CSS 선택자에 기반하며 맞춤 선택자도 존재)</li> 
+ <li>모든 선택자는 '<b><i>$()</i></b>'로 시작 </li>
+</ol>
+
+
+<h1>종류</h1>
+
+<ol>
+  <li>
+   HTML 요소
+   <ul>
+    <li><b>HTML 요소의 이름</b>을 사용해서 요소를 선택</li>
+    <li><b>해당하는 모든 HTML 요소에 적용</b></li>   
+   </ul>
+ </li>
+ <li>
+   #id
+   <ul>
+    <li><b>HTML 태그의 id 속성</b>을 사용해서 요소를 선택</li>
+    <li>페이지에서 id는 유일무이하기 때문에 <b>1개의 요소만 적용</b></li>
+    <li>'<b><i>#</i></b>'를 사용한 다음 id의 이름을 적는다.</li>    
+  </ul>
+ </li>
+ <li>
+  .class
+   <ul>
+     <li><b>특정 클래스</b>를 가지는 요소를 선택</li>
+     <li>'<b><i>.</i></b>'를 사용한 다음 id의 이름을 적는다.</li>    
+   </ul>  
+ </li>
+</ol>
+
+
+
 ```jsp
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
- 
     <!--jQuery 라이브러리 추가-->
     <script src="../js/jquery-3.6.0.js"></script>
     
@@ -26,8 +67,8 @@
             
             // 속성 탐색 선택자
             // 태그[속성=값]
-            // 태그[속성^=값]: 속성의 값 중에서 값으로 시작하는 대상을 구분
-            // 태그[속성$=값]: 속성의 값 중에서 값으로 끝나는 대상을 구분
+            // 태그[속성^=값]: 속성의 값중에서 값으로 시작하는 대상을 구분
+            // 태그[속성$=값]: 속성의 값중에서 값으로 끝나는 대상을 구분
             $('input[type=text]').css('color','green');
             $('input[type=password]').css('color','red');
             
@@ -38,21 +79,18 @@
             alert("tmp: "+tmp);
             
             // 위치를 탐색 선택자
-            // 태그:odd 홀수 // 태그:even 짝수   
-            // 태그:first 처음 // 태그:last 마지막
+            // 태그:odd     홀수  // 태그:even    짝수
+            // 태그:first 처음 // 태그:last    마지막
             
             $('tr:odd').css('background','yellow');
             $('tr:even').css('background','green');
             
             $('tr:first').css('background','red');
-            $('tr:last').css('background','blue');
-                
+            $('tr:last').css('background','blue');              
         });
     </script>
 </head>
 <body>
-    <h1>WebContent/jq/test2.jsp</h1>
-    
     <h2 id="title1">제목 1</h2>
     <h2 class="title2">제목 2</h2>
         
@@ -91,4 +129,5 @@
         </tr>
     </table>
 </body>
+</html>
 ```
