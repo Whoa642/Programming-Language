@@ -125,8 +125,6 @@ Infinity 또는 -Infinity는 자바스크립트가 표현할 수 있는 숫자�
     <li>NEGATIVE_INFINITY: 언더플로우 시 반환/li>
 </ul>
 
-<br>
-
 ```javascript
 <!DOCTYPE html>
 <html>
