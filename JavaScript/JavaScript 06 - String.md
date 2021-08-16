@@ -1,18 +1,31 @@
-**String** 객체를 저장하는 방식에는 문자열 객체나 문자열 상수를 사용하는 2가지가 존재한다. 
-문자열 객체를 저장한 String 객체의 타입은 **object**이고 문자열 상수를 저장한 String 객체의 타입은 **string**이다.
-<b>(이 때문에 저장한 문자열의 값이 같아도 '==='를 사용하면 false가 나온다.)</b>
+<h1>정의</h1>
 
-```javascript
-// var 참조 변수 = new String(문자열); -> 문자열 객체 
-var str1 = new String("Good!");
- 
-// var 참조 변수 = "문자열"; -> 문자열 상수
-var str2 = "Good!";
+<ol>
+ <li>문자열이며 일반적으로 <b>문자열 리터럴</b>로 생성되는 원시 자료형, 자료형은 String</li>
+ <li><b>new 예약어</b>를 사용해서 객체로 정의하면 자료형은 Object</li>
+ <li><b><i>이 때문에 저장한 문자열의 값이 같아도 비교 연산자 '==='를 사용하면 false가 나온다. 또한 객체는 비교 연산이 불가능하기 때문에 항상 false를 반환한다</i></b>.</li>
+</ol>
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <script type="text/javascript">
+       // var 참조 변수 = new String(); -> 객체(Object)
+     var str1 = new String("Good!");
+    // var 참조 변수 = "문자열 리터럴"; -> 문자열(String Literal)
+    var str2 = "Good!";
    
-document.write(str1 == str2); // true
-document.write(str1 === str2); // false
-document.write(typeof str1); // object
-document.write(typeof str2); // string
+    document.write(str1 == str2); // true
+    document.write(str1 === str2); // false
+    document.write(typeof str1); // object
+    document.write(typeof str2); // string    </script>
+</head>
+<body> 
+</body>
+</html>
 ```
 
 String 객체는 문자열의 스타일을 변경하는 함수와 문자열을 처리하는 2가지 종류의 함수를 가진다. 
