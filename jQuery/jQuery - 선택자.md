@@ -6,6 +6,7 @@
  <li>모든 선택자는 '<b><i>$()</i></b>'로 시작 </li>
 </ol>
 
+<br>
 
 <h1>종류</h1>
 
@@ -33,8 +34,6 @@
    </ul>  
  </li>
 </ol>
-
-
 
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8"
