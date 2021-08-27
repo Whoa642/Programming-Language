@@ -2,7 +2,7 @@
 
 <ol>
  <li>HTML 요소를 선택하고 조작</li>
- <li>HTML 요소의 이름, id, 클래스, 자료형, 속성, 속성값을 찾는데 선택자 사용(이미 존재하는 CSS 선택자에 기반하며 맞춤 선택자도 존재)</li> 
+ <li>HTML 요소의 이름, id, class, 자료형, 속성, 속성값을 찾는데 선택자 사용(이미 존재하는 CSS 선택자에 기반하며 맞춤 선택자도 존재)</li> 
  <li>모든 선택자는 '<b><i>$()</i></b>'로 시작 </li>
 </ol>
 
@@ -53,34 +53,33 @@
             // $(대상 정보).메서드();
             
             // * -> 전체 요소
-            $('*').css('color','orange');
+            $('*').css('color', 'orange');
             
             // '태그명' -> 태그 요소
-            $('h1').css('color','red');
-            $('h2').css('color','blue');
+            $('h1').css('color', 'red');
+            $('h2').css('color', 'blue');
             
-            // #아이디 -> 아이디 요소
-            $('#title1').css('color','green');
-            // .클래스명 - 클래스 요소
-            $('.title2').css('color','#A566FF');
+            // #아이디명 -> 아이디 요소
+            $('#title1').css('color', 'green');
+            // .클래스명 -> 클래스 요소
+            $('.title2').css('color', '#A566FF');
             
             // 속성 탐색 선택자
             // 태그[속성=값]: 속성에서 값과 일치하는 대상 선택
             // 태그[속성^=값]: 속성에서 값으로 시작하는 대상 선택
             // 태그[속성$=값]: 속성에서 값으로 끝나는 대상 선택
-            $('input[type=text]').css('color','green');
-            $('input[type=password]').css('color','red');
+            $('input[type=text]').css('color', 'green');
+            $('input[type=password]').css('color', 'red');
             
-            $('input[type^=t]').css('color','black');
+            $('input[type^=t]').css('color', 'black');
             $('input[type=text]').val('홍길동');
             
             var tmp = $('input[type=text]').val();
             alert("tmp: "+tmp);
             
             // 위치 탐색 선택자
-            // 태그:odd -> 홀수  // 태그:even -> 짝수
-            // 태그:first -> 처음 // 태그:last -> 마지막
-            
+            // 태그:odd -> 홀수 // 태그:even -> 짝수
+            // 태그:first -> 처음 // 태그:last -> 마지막          
             $('tr:odd').css('background','yellow');
             $('tr:even').css('background','green');
             
@@ -92,15 +91,16 @@
 <body>
     <h2 id="title1">제목 1</h2>
     <h2 class="title2">제목 2</h2>
-    <h2>제목 3</h2>     
+    <h2>제목 3</h2>  
+
     내용<br>
     
     <hr>
     
-    아이디:<input type="text" name="id"><br>
-    비밀번호:<input type="password" name="pw"><br>
+    아이디: <input type="text" name="id"><br>
+    비밀번호: <input type="password" name="pw"><br>
     이름: <input type="text" name="name"><br>
-    
+
     <hr>
     
     <table border="1">
